@@ -1,0 +1,9 @@
+h1 {
+  color:green;
+}
+
+.card {
+  padding: 10px;
+  margin: 10px;
+  float: left;
+}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Keg } from './models/keg.model'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Tap Room';
+  currentFocus: string = 'Angular Homework';
+  currentTime = new Date();
+  month: number = this.currentTime.getMonth() + 1;
+  day: number = this.currentTime.getDate();
+  year: number = this.currentTime.getFullYear();
+
+  kegs: Keg[] = [
+    new Keg('Coors', 'Light', 3.5, 124, 3),
+    new Keg('Budweiser', 'Light', 3.3, 124, 2.5),
+    new Keg('Dino', 'Tricerahops', 4.5, 124, 5),
+    new Keg('Shasta', 'Soda Water', 0, 124, 1),
+  ]
+  editKeg() {
+    alert("Drink this keg!");
+  }
+
+  pourDrink(currentKeg) {
+    currentKeg.capacity -=1
+
+  }
+
+
 }
