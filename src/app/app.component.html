@@ -5,18 +5,39 @@
       Welcome to {{ title }}!
     </h1>
     <h4>{{month}}/{{day}}/{{year}}</h4>
+
+    <h4><button  class="btn btn-warning"  (click)="addKeg()">Add Keg</button></h4>
   </div>
 
 
-  <div class="card" style="width: 300px; height: auto;" *ngFor="let currentKeg of kegs">
-    <h2>{{currentKeg.brand}}: {{currentKeg.name}}<button  class="btn btn-success"  (click)="pourDrink(currentKeg)">Pour!</button></h2>
+<app-list-keg [childListKeg]="masterListKeg" (clickSender)="editKeg($event)"></app-list-keg>
+<div *ngIf="selectedKeg">
+  <div class="card" style="width: 300px; height: auto;" >
+    <h2>EDIT {{selectedKeg.brand}}: {{selectedKeg.name}}
+      <button class="btn btn-success"(click)="pourDrink(selectedKeg)">Pour!</button>
+    </h2>
+    <p>Alcohol% {{selectedKeg.alcoholContent}}</p>
+    <p>beers/pints available: <strong>{{selectedKeg.capacity}}</strong></p>
+    <p>price:  <strong>${{selectedKeg.price}}</strong></p>
+
+    <app-edit-keg ></app-edit-keg>
+  </div>
+
+</div>
+
+
+  <!-- <div class="card" style="width: 300px; height: auto;" *ngFor="let currentKeg of kegs">
+    <h2>{{currentKeg.brand}}: {{currentKeg.name}}
+      <button class="btn btn-success"(click)="pourDrink(currentKeg)">Pour!</button>
+    </h2>
     <p>Alcohol% {{currentKeg.alcoholContent}}</p>
     <p>beers/pints available: <strong>{{currentKeg.capacity}}</strong></p>
     <p>price:  <strong>${{currentKeg.price}}</strong></p>
 
+    <app-edit-keg ></app-edit-keg>
+  </div> -->
 
 
-
-    <router-outlet></router-outlet>
-  </div>
 </div>
+
+<!-- [childKeg]="masterKeg" (clickSender)="editKeg($event)" -->

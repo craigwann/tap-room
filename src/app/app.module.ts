@@ -1,20 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { KegsComponent } from './kegs/kegs.component';
+import { EditKegComponent } from './edit-keg/edit-keg.component';
+import { NewKegComponent } from './new-keg/new-keg.component';
+import { ListKegComponent } from './list-keg/list-keg.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    KegsComponent
+    EditKegComponent,
+    NewKegComponent,
+    ListKegComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
