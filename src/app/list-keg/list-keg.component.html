@@ -1,11 +1,9 @@
 <div class="card listKeg" *ngFor="let currentKeg of childListKeg">
-  <h2>{{currentKeg.brand}}: {{currentKeg.name}}
-    <button class="btn btn-success"(click)="pourDrink(currentKeg)">Pour!</button>
-  </h2>
-  <p>Alcohol% {{currentKeg.alcoholContent}}</p>
+  <h4><strong>{{currentKeg.brand}}:</strong> {{currentKeg.name}}
+    <button class="btn btn-success"(click)="pourDrink(currentKeg)">🍺 Pour!</button>
+     <button (click)="editButtonClicked(currentKeg)" class ="btn btn-warning">Edit!</button>
+  </h4>
+  <!-- <p>Alcohol% {{currentKeg.alcoholContent}}</p>
   <p>beers/pints 🍺 available: <strong>{{currentKeg.capacity}}</strong></p>
-  <p>price:  <strong>${{currentKeg.price}}</strong></p>
-  <h5>
-    <button (click)="editButtonClicked(currentKeg)" class ="btn btn-warning">Edit!</button>
-  </h5>
+  <p>price:  <strong>${{currentKeg.price}}</strong></p> -->
 </div>

@@ -7,12 +7,17 @@ import { Keg } from '../models/keg.model'
   styleUrls: ['./edit-keg.component.css']
 })
 export class EditKegComponent {
-  @Input() childKeg: Keg[];
-  @Output() clickSender = new EventEmitter();
+  @Input() childKeg: Keg;
+  @Output() clickedDone = new EventEmitter();
 
   constructor() { }
 
-  ngOnInit() {
+  finishedEditing() {
+    this.clickedDone.emit();
+  }
+
+  pourDrink(currentKeg) {
+    currentKeg.capacity -=1;
   }
 
 }

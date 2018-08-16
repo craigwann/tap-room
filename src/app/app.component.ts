@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Keg } from './models/keg.model'
 
 @Component({
@@ -23,10 +23,18 @@ export class AppComponent {
   ]
 
 
-
   editKeg(clickedKeg) {
     this.selectedKeg= clickedKeg;
+
   }
 
+  pourDrink(currentKeg) {
+    currentKeg.capacity -=1;
+  }
+
+  finishedEditing() {
+    console.log("in parent");
+    this.selectedKeg = null;
+  }
 
 }

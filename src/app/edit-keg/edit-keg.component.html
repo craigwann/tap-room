@@ -1,0 +1,12 @@
+
+<div *ngIf="childKeg">
+<div class="card" style="width: 300px; height: auto;" >
+    <h2>EDIT {{childKeg.brand}}: {{childKeg.name}}
+      <button class="btn btn-success"(click)="pourDrink(childKeg)">Pour!</button>
+    </h2>
+    <p>Alcohol% {{childKeg.alcoholContent}}</p>
+    <p>beers/pints 🍺 available: <strong>{{childKeg.capacity}}</strong></p>
+    <p>price:  <strong>${{childKeg.price}}</strong></p>
+    <button class="btn btn-info" (click)="finishedEditing()">Done</button>
+  </div>
+</div>
